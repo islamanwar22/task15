@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding: 2em;
+        }
+        input[type= "text"]{
+            padding-inline-start: 1.5em;
+            height: 3em;
+            width: 20em;
+            border : 1px solid gray;
+            outline: none;
+        }
+        input[type= "text"]:focus{
+            border : 1px solid gray;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+<input id="nput" type="text" oninput="changeBorderColor(this.value)">
+<p class="demo"></p>
+<script>
+function changeBorderColor(value) {
+    const npt = document.getElementById("nput");
+    const para = document.querySelector(".demo")
+    // Change border color dynamically based on input length
+            if (value.length <= 4){
+        para.innerHTML = "must be at least 6 characters";
+        para.style.color = "red";
+        npt.style.outline = "none";
+        npt.style.borderColor = "red";  
+            }   else {
+        para.innerHTML = "";
+        npt.style.outline = "none";
+        npt.style.border = "1px solid green";
+    }
+        }
+</script>
+
+</body>
+</html>
